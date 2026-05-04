@@ -1,0 +1,196 @@
+.create-post-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.create-post-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.create-post-icon-wrap {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+  animation: popIn 0.5s var(--ease-spring) both;
+  position: relative;
+  overflow: hidden;
+}
+.create-post-icon-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 60%);
+}
+
+.create-post-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: 10px;
+}
+
+.create-post-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 40px 44px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.create-post-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.char-counter {
+  font-size: 0.73rem;
+  color: var(--color-text-dim);
+  text-align: right;
+  margin-top: 5px;
+  display: block;
+  transition: color var(--transition);
+}
+.char-warn { color: var(--color-accent) !important; }
+
+/* Anonymous toggle */
+.anon-toggle {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.anon-toggle:has(input:checked) {
+  border-color: rgba(251, 146, 60, 0.4);
+  background: rgba(251, 146, 60, 0.04);
+}
+
+.anon-toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.anon-toggle-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.anon-toggle-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-subtle);
+  border: 1px solid rgba(251, 146, 60, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.anon-toggle-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.anon-toggle-desc {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-dim);
+  margin-top: 2px;
+}
+
+/* Toggle switch */
+.toggle-switch {
+  width: 46px;
+  height: 26px;
+  background: var(--color-surface-4);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  position: relative;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.toggle-switch.on {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  border-color: var(--color-accent);
+  box-shadow: 0 0 12px rgba(251, 146, 60, 0.3);
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform var(--ease-spring) 0.25s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.toggle-switch.on .toggle-knob {
+  transform: translateX(20px);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.anon-note {
+  background: rgba(251, 146, 60, 0.07);
+  border: 1px solid rgba(251, 146, 60, 0.2);
+  border-radius: var(--radius-md);
+  padding: 13px 18px;
+  font-size: 0.85rem;
+  color: var(--color-accent-light);
+  line-height: 1.5;
+  animation: slideDown 0.3s var(--ease-out);
+}
+
+.create-submit-btn { width: 100%; }
+
+@media (max-width: 640px) {
+  .create-post-card { padding: 28px 22px; }
+}
